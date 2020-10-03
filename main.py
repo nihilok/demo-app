@@ -33,9 +33,8 @@ class MainApp(MDApp):
         self.screen_manager = self.root.ids.screen_manager
         self.nav_drawer = self.root.ids.nav_drawer
         self.resource_list = self.root.ids.resources_screen.ids.resource_list
-        self.icon_list = []
         self.populate_resources()
-        # print(self.root.ids.home_screen.ids)
+        # print(self.root.ids)
 
     def populate_resources(self):
         # result = requests.get("https://m-ed-x.firebaseio.com/XXXXXXX")
@@ -92,6 +91,7 @@ class MainApp(MDApp):
                      "emoticon-devil-outline", "emoticon-excited-outline", "emoticon-happy-outline",
                      "emoticon-kiss-outline", "emoticon-neutral-outline", "emoticon-neutral", "emoticon-poop",
                      "emoticon-sad"]
+		return icon_list
 
 if __name__ == '__main__':
     MainApp().run()
