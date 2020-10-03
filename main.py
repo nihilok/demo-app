@@ -53,7 +53,6 @@ class MainApp(MDApp):
                                                                       # on_release=self.open_url
                                                                       ))
 
-
     def app_description(self):
         return 'This is a description of the app, it can be as long as you like, within reason.\n\nIt ' \
                'can go onto new lines with no problem.\n\nHowever, if you make it too long the text may ' \
@@ -93,5 +92,6 @@ class MainApp(MDApp):
                      "emoticon-sad"]
 		    return icon_list
 
+        
 if __name__ == '__main__':
     MainApp().run()
