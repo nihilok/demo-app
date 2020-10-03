@@ -96,7 +96,7 @@ Screen:
                     app.close_nav_drawer()
                     app.screen_manager.current = 'profile_screen'
                 IconLeftWidget:
-                    icon: "format-color-fill"
+                    icon: "account"
                     on_release:
                         app.close_nav_drawer()
                         app.screen_manager.current = 'profile_screen'
@@ -106,7 +106,7 @@ Screen:
                     app.close_nav_drawer()
                     app.screen_manager.current = 'tab_screen'
                 IconLeftWidget:
-                    icon: "format-color-fill"
+                    icon: "view-carousel"
                     on_release:
                         app.close_nav_drawer()
                         app.screen_manager.current = 'tab_screen'               
@@ -116,7 +116,7 @@ Screen:
                     app.close_nav_drawer()
                     app.screen_manager.current = 'game_screen'
                 IconLeftWidget:
-                    icon: "format-color-fill"
+                    icon: "gamepad-variant-outline"
                     on_release:
                         app.close_nav_drawer()
                         app.screen_manager.current = 'game_screen'
@@ -126,10 +126,20 @@ Screen:
                     app.close_nav_drawer()
                     app.screen_manager.current = 'photo_screen'
                 IconLeftWidget:
-                    icon: "information"
+                    icon: "camera-image"
                     on_release:
                         app.close_nav_drawer()
                         app.screen_manager.current = 'photo_screen'
+            CustomNavBarButton:
+                text: "About"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'about_screen'
+                IconLeftWidget:
+                    icon: "information"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'about_screen'                        
 
             MDLabel:
             MDLabel:
