@@ -23,7 +23,9 @@ class MainApp(MDApp):
         with open("theme.txt", 'r') as f:
             theme_color = f.read()
         self.theme_cls.primary_palette = theme_color
-        self.theme_cls.theme_style = "Dark"
+        with open("theme.txt", 'r') as f:
+            theme_style = f.read()
+        self.theme_cls.theme_style = theme_style
         gui = Builder.load_file('main.kv')
         return gui
 
@@ -69,8 +71,12 @@ class MainApp(MDApp):
     def change_style(self):
         if self.theme_cls.theme_style == 'Dark':
             self.theme_cls.theme_style = 'Light'
+            style = "Light"
         else:
             self.theme_cls.theme_style = 'Dark'
+            style = "Dark"
+        with open('style.txt', 'w') as f:
+            f.write(style)
     
     def open_nav_drawer(self):
         Clock.schedule_once(lambda dt: self.nav_drawer.set_state('open'), 0.2)
