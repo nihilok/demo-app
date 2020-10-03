@@ -5,17 +5,13 @@
 		spacing: 20, 20
 		MDLabel:	
 		MDRectangleFlatButton:
-			size_hint: None, .3
-			pos_hint: {"center_x": .5}
-			width: 40
+			size_hint: .1, .3
 			text: "Change Theme"
 			on_press:
 				app.change_theme()
 
 		MDRectangleFlatButton:
-			size_hint: None, .3
-			pos_hint: {"center_x": .5}
-			width: 40
+			size_hint: .1, .3
 			text: "Dark / Light"
 			on_press:
 				app.change_style()
