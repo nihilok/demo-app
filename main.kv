@@ -25,6 +25,9 @@ Screen:
                 AboutScreen:
                     name: "about_screen"
                     id: about_screen
+                ThemeScreen:
+                    name: "theme_screen"
+                    id: theme_screen
 
     MDNavigationDrawer:
         id: nav_drawer
@@ -61,6 +64,16 @@ Screen:
                     on_release:
                         app.close_nav_drawer()
                         app.screen_manager.current = 'resources_screen'
+            CustomNavBarButton:
+                text: "About"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'theme_screen'
+                IconLeftWidget:
+                    icon: "format-color-fill"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'theme_screen'
             CustomNavBarButton:
                 text: "About"
                 on_release:
