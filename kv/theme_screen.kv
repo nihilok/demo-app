@@ -1,14 +1,12 @@
 <ThemeScreen>:
-	BoxLayout:
-		size_hint: 1, 1
-		orientation: "vertical"
-		MDCard:	
-			MDRectangleFlatButton:
-				text: "Change Theme"
-				on_press:
-					app.change_theme()
 
-			MDRectangleFlatButton:
-				text: "Dark / Light"
-				on_press:
-					app.change_style()
+	MDCard:	
+		MDRectangleFlatButton:
+			text: "Change Theme"
+			on_press:
+				app.change_theme()
+
+		MDRectangleFlatButton:
+			text: "Dark / Light"
+			on_press:
+				app.change_style()
