@@ -90,8 +90,8 @@ class MainApp(MDApp):
                      "emoticon-devil-outline", "emoticon-excited-outline", "emoticon-happy-outline",
                      "emoticon-kiss-outline", "emoticon-neutral-outline", "emoticon-neutral", "emoticon-poop",
                      "emoticon-sad"]
-		    return icon_list
+        return icon_list
 
-        
+
 if __name__ == '__main__':
     MainApp().run()
