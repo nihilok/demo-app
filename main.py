@@ -20,7 +20,7 @@ class CustomThreeLineIconListItem(TwoLineIconListItem):
 class MainApp(MDApp):
 
     def build(self):
-        with open("theme.txt" 'r') as f:
+        with open("theme.txt", 'r') as f:
             theme_color = f.read()
         self.theme_cls.primary_palette = theme_color
         self.theme_cls.theme_style = "Dark"
@@ -62,7 +62,7 @@ class MainApp(MDApp):
         color_list = ['Red', 'Pink', 'Purple', 'DeepPurple', 'Indigo', 'Blue', 'LightBlue', 'Cyan', 'Teal', 'Green', 'LightGreen', 'Lime', 'Yellow', 'Amber', 'Orange', 'DeepOrange', 'Brown', 'Gray', 'BlueGray']
         new_color =  color_list[randint(0, len(color_list)-1)]
         self.theme_cls.primary_palette = new_color
-        with open('theme.txt' 'w') as f:
+        with open('theme.txt', 'w') as f:
             f.write(new_color)
 
     
