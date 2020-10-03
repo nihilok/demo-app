@@ -10,7 +10,7 @@ from kivymd.theming import ThemeManager
 from kivymd.uix.button import MDIconButton
 from kivymd.uix.list import TwoLineIconListItem
 
-from screens import HomeScreen, AboutScreen, ResourcesScreen, ContentNavigationDrawer, ThemeScreen, GameScreen, TabScreen, PhotoScreen
+from screens import HomeScreen, AboutScreen, ResourcesScreen, ContentNavigationDrawer, ThemeScreen, GameScreen, ProfileScreen, TabScreen, PhotoScreen
 
 
 class CustomThreeLineIconListItem(TwoLineIconListItem):
