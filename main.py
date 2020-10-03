@@ -58,7 +58,7 @@ class MainApp(MDApp):
 
     def change_theme(self):
         color_list = ['Red', 'Pink', 'Purple', 'DeepPurple', 'Indigo', 'Blue', 'LightBlue', 'Cyan', 'Teal', 'Green', 'LightGreen', 'Lime', 'Yellow', 'Amber', 'Orange', 'DeepOrange', 'Brown', 'Gray', 'BlueGray']
-        self.theme_cls.primary_palette = color_list[randint(0, len(color_list))]
+        self.theme_cls.primary_palette = color_list[randint(0, len(color_list)-1)]
 
     def open_nav_drawer(self):
         Clock.schedule_once(lambda dt: self.nav_drawer.set_state('open'), 0.2)
