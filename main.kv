@@ -1,0 +1,74 @@
+#:include kv/homescreen.kv
+#:include kv/aboutscreen.kv
+#:include kv/resourcesscreen.kv
+
+<CustomNavBarButton@OneLineAvatarListItem>:
+
+Screen:
+    BoxLayout:
+        orientation: "vertical"
+        MDToolbar:
+            pos_hint: {"top": 1, "center_x": .5}
+            title: "My Demo App"
+            left_action_items: [["menu", lambda x: app.open_nav_drawer()]]
+        NavigationLayout:
+            id: nav_layout
+            ScreenManager:
+                id: screen_manager
+                HomeScreen:
+                    name: "home_screen"
+                    id: home_screen
+                ResourcesScreen:
+                    name: "resources_screen"
+                    id: resources_screen
+                AboutScreen:
+                    name: "about_screen"
+                    id: about_screen
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#dddddd")
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+        ContentNavigationDrawer:
+            orientation: "vertical"
+            Image:
+                id: avatar
+                size_hint: 1, 1
+                source: "images/image.png"
+            CustomNavBarButton:
+                text: "Home"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'home_screen'
+                IconLeftWidget:
+                    icon: "home"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'home_screen'
+            CustomNavBarButton:
+                text: "Resources"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'resources_screen'
+                IconLeftWidget:
+                    icon: "library"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'resources_screen'
+            CustomNavBarButton:
+                text: "About"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'about_screen'
+                IconLeftWidget:
+                    icon: "information"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'about_screen'
+
+            MDLabel:
+            MDLabel:

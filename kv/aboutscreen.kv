@@ -1,0 +1,85 @@
+<AboutScreen>:
+    GridLayout:
+        padding: 20, 20, 20, 20
+        cols: 1
+        size_hint: 1, 1    
+        #MDLabel:
+            #size_hint: 1, 1
+        MDLabel:
+            text: "This App Template is being curated and developed by\nNihilok"
+            font_style: 'Subtitle2'
+            theme_text_color: 'Secondary'
+            halign: 'center'
+            height: 1
+        
+        MDLabel:
+            text: "@nihilok"
+            font_style: "H6"
+            theme_text_color: 'Secondary'
+            halign: 'center'
+            height: 1
+
+        GridLayout:
+            rows: 1
+            cols: 5
+            size_hint: 1, 1
+            
+            MDLabel:
+                size_hint: 1, 1
+
+            MDIconButton:
+                icon: "github-circle"
+                size_hint: 1, 1
+                on_release:
+                    app.open_socials("https://github.com/nihilok")
+            
+            MDIconButton:
+                icon: "twitter"
+                size_hint: 1, 1
+                on_release:
+                    app.open_socials("https://github.com/nihilok")
+
+            MDIconButton:
+                icon: "instagram"
+                size_hint: 1, 1
+                on_release:
+                    app.open_socials("https://github.com/nihilok")
+            
+            MDLabel:
+                size_hint: 1, 1
+
+
+        
+        MDSeparator:
+            height: "1dp"
+        
+        MDLabel:
+            size_hint: 1, 1
+        MDLabel:
+            size_hint: 1, 1
+        
+        Image:
+            source: "images/image.png"
+            size_hint: 1, None
+            height: "300dp"
+        
+        MDLabel:
+            size_hint: 1, 1
+        MDLabel:
+            size_hint: 1, 1
+        
+        MDSeparator:
+            height: "1dp"
+        
+        MDLabel:
+            text: "\nCompany Co is a registered C.I.C limited by guarantee in the UK.\nCompany No 21755259"
+            theme_text_color: "Hint"
+            font_size: 14
+            halign: "center"
+        
+        MDLabel:
+            text: "\napp development by 'nihilok'"
+            theme_text_color: 'Hint'
+            font_size: 14
+            halign: 'center'
+

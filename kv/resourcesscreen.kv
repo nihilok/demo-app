@@ -1,0 +1,44 @@
+#:import utils kivy.utils
+
+<CustomThreeLineIconListItem>:
+    IconLeftWidget:
+        icon: "emoticon-cool-outline"
+        id: root.id + "_icon"
+
+<ResourcesScreen>:
+    GridLayout:
+        canvas.before:
+            Color:
+                rgb: utils.get_color_from_hex("#b19cd9")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        cols: 1
+        MDLabel:
+            text: 'A list of resources:'
+            halign: 'center'
+            font_style: 'Subtitle1'
+            size_hint: 1, .1
+
+        AnchorLayout:
+            anchor_x: "center"
+            size_hint: 1, .8
+            ScrollView:
+                size_hint: .9, 1
+
+                halign: "center"
+                canvas.before:
+                    Color:
+                        rgb: utils.get_color_from_hex("#dddddd")
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                #pos_hint: {"top": .9, "right": .9}
+                MDList:
+
+                    pos_hint: {"right": .9}
+                    id: resource_list
+        MDLabel:
+            text: "These could be links to external sites other sections of the app."
+            halign: "center"
+            size_hint: 1, .1
