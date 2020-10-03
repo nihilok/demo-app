@@ -1,3 +1,4 @@
+from random import randint
 import requests
 import json
 import webbrowser
@@ -54,6 +55,10 @@ class MainApp(MDApp):
         return 'This is a description of the app, it can be as long as you like, within reason.\n\nIt ' \
                'can go onto new lines with no problem.\n\nHowever, if you make it too long the text may ' \
                'need to be made smaller! For now, this is ok I think.'
+
+    def change_theme(self):
+        color_list = ['Red', 'Pink', 'Purple', 'DeepPurple', 'Indigo', 'Blue', 'LightBlue', 'Cyan', 'Teal', 'Green', 'LightGreen', 'Lime', 'Yellow', 'Amber', 'Orange', 'DeepOrange', 'Brown', 'Gray', 'BlueGray']
+        self.theme_cls.primary_palette = color_list[randint(0, len(color_list))]
 
     def open_nav_drawer(self):
         Clock.schedule_once(lambda dt: self.nav_drawer.set_state('open'), 0.2)
