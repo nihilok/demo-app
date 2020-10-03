@@ -1,7 +1,11 @@
 #:include kv/homescreen.kv
 #:include kv/aboutscreen.kv
 #:include kv/resourcesscreen.kv
-#:include kv/theme_screen.kv
+#:include kv/themescreen.kv
+#:include kv/tabscreen.kv
+#:include kv/profilescreen.kv
+#:include kv/photoscreen.kv
+#:include kv/gamescreen.kv
 
 <CustomNavBarButton@OneLineAvatarListItem>:
 
@@ -28,6 +32,18 @@ Screen:
                 ThemeScreen:
                     name: "theme_screen"
                     id: theme_screen
+                ProfileScreen:
+                    name: "profile_screen"
+                    id: profile_screen
+                TabScreen:
+                    name: "tab_screen"
+                    id: tab_screen
+                GameScreen:
+                    name: "game_screen"
+                    id: game_screen
+                PhotoScreen:
+                    name: "photo_screen"
+                    id: photo_screen
 
     MDNavigationDrawer:
         id: nav_drawer
@@ -75,15 +91,45 @@ Screen:
                         app.close_nav_drawer()
                         app.screen_manager.current = 'theme_screen'
             CustomNavBarButton:
-                text: "About"
+                text: "Profile"
                 on_release:
                     app.close_nav_drawer()
-                    app.screen_manager.current = 'about_screen'
+                    app.screen_manager.current = 'profile_screen'
+                IconLeftWidget:
+                    icon: "format-color-fill"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'profile_screen'
+            CustomNavBarButton:
+                text: "Tab Layout"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'tab_screen'
+                IconLeftWidget:
+                    icon: "format-color-fill"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'tab_screen'               
+            CustomNavBarButton:
+                text: "Game"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'game_screen'
+                IconLeftWidget:
+                    icon: "format-color-fill"
+                    on_release:
+                        app.close_nav_drawer()
+                        app.screen_manager.current = 'game_screen'
+            CustomNavBarButton:
+                text: "Photo Gallery"
+                on_release:
+                    app.close_nav_drawer()
+                    app.screen_manager.current = 'photo_screen'
                 IconLeftWidget:
                     icon: "information"
                     on_release:
                         app.close_nav_drawer()
-                        app.screen_manager.current = 'about_screen'
+                        app.screen_manager.current = 'photo_screen'
 
             MDLabel:
             MDLabel:
