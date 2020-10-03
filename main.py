@@ -23,7 +23,7 @@ class MainApp(MDApp):
         with open("theme.txt", 'r') as f:
             theme_color = f.read()
         self.theme_cls.primary_palette = theme_color
-        with open("theme.txt", 'r') as f:
+        with open("style.txt", 'r') as f:
             theme_style = f.read()
         self.theme_cls.theme_style = theme_style
         gui = Builder.load_file('main.kv')
