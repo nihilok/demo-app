@@ -13,7 +13,7 @@
         MDCard:
             orientation: "vertical"
             padding: "20dp"
-            size_hint: .85, .7
+            size_hint: .85, .6
 
             MDLabel:
                 text: "Welcome to the APP!"
@@ -39,7 +39,7 @@
                 source: 'images/icon.png'
                 #size: self.size
         GridLayout:
-            size_hint_y: .3
+            size_hint_y: .4
             spacing: 10, 10
             rows: 1
             cols: 2
@@ -65,7 +65,7 @@
                     MDLabel:
                         text: app.app_description() + "\n\nYou could also add more text here if you make it really small."
                         size_hint_y: .7
-                        font_size: 28
+                        font_size: 32
                         halign: 'justify'
                         size_hint_y: None
                         height: self.texture_size[1]
