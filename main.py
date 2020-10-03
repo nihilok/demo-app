@@ -19,7 +19,8 @@ class CustomThreeLineIconListItem(TwoLineIconListItem):
 class MainApp(MDApp):
 
     def build(self):
-        self.theme_cls.primary_palette = "Purple"
+        self.theme_cls.primary_palette = "Blue"
+        self.theme_cls.theme_style = "Dark"
         gui = Builder.load_file('main.kv')
         return gui
 

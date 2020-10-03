@@ -9,7 +9,7 @@
     GridLayout:
         canvas.before:
             Color:
-                rgb: utils.get_color_from_hex("#b19cd9")
+                rgba: app.theme_cls.primary_light
             Rectangle:
                 size: self.size
                 pos: self.pos
@@ -29,7 +29,7 @@
                 halign: "center"
                 canvas.before:
                     Color:
-                        rgb: utils.get_color_from_hex("#dddddd")
+                        rgba: app.theme_cls.bg_dark
                     RoundedRectangle:
                         size: self.size
                         pos: self.pos
