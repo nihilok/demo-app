@@ -11,7 +11,7 @@ class HomeScreen(Screen):
 
 
 class ResourcesScreen(Screen):
-	pass
+    pass
 
 
 class AboutScreen(Screen):
@@ -19,4 +19,20 @@ class AboutScreen(Screen):
 
 
 class ThemeScreen(Screen):
-	pass
+    pass
+	
+
+class GameScreen(Screen):
+    pass
+
+
+class TabScreen(Screen):
+    pass
+
+
+class ProfileScreen(Screen):
+    pass
+
+
+class PhotoScreen(Screen):
+    pass
