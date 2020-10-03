@@ -42,7 +42,7 @@ class MainApp(MDApp):
                      "emoticon-devil-outline", "emoticon-excited-outline", "emoticon-happy-outline",
                      "emoticon-kiss-outline", "emoticon-neutral-outline", "emoticon-neutral", "emoticon-poop",
                      "emoticon-sad"]
-        for i in range(12):
+        for i in range(1,13):
             self.resource_list.add_widget(CustomThreeLineIconListItem(text=f"Section {i}",
                                                                       id=f"{i}",
                                                                       secondary_text=f"{i} could refer to whatever you want",
