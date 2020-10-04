@@ -1,0 +1,37 @@
+<CustomThreeLineIconListItem>:
+	IconLeftWidget:
+		icon: "message-text"
+
+<ExampleTab>:
+	GridLayout:
+        canvas.before:
+            Color:
+                rgba: app.theme_cls.primary_light
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        cols: 1
+        MDLabel:
+            text: 'Message Board:'
+            halign: 'center'
+            font_style: 'Subtitle1'
+            size_hint: 1, .1
+        AnchorLayout:
+            anchor_x: "center"
+            size_hint: 1, .8
+            ScrollView:
+                size_hint: .9, 1
+                canvas.before:
+                    Color:
+                        rgba: app.theme_cls.bg_light
+                    RoundedRectangle:
+                        size: self.size
+                        pos: self.pos
+                MDList:
+                	id: message_list
+        MDFlatButton:
+            pos_hint: {"top": .098, "center_x": .5}
+            size_hint: .86, .098
+            text: 'New Message'
+            on_release:
+                app.screen_manager.current = "new_message_screen"

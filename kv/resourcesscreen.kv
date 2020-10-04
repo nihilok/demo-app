@@ -1,4 +1,4 @@
-<CustomThreeLineIconListItem>:
+<CustomTwoLineIconListItem>:
     IconLeftWidget:
         icon: "emoticon-cool-outline"
         id: root.id + "_icon"
@@ -15,8 +15,8 @@
         MDLabel:
             text: 'A list of resources:'
             halign: 'center'
-            font_style: 'Subtitle1'
-            size_hint: 1, .1
+            font_style: 'H6'
+            size_hint: .8, .1
 
         AnchorLayout:
             anchor_x: "center"
@@ -37,6 +37,6 @@
                     pos_hint: {"right": .9}
                     id: resource_list
         MDLabel:
-            text: "These could be links to external sites other sections of the app."
+            text: "These could be links to external sites other sections of the app. They can be updated externally (live) from a database."
             halign: "center"
-            size_hint: 1, .1
+            size_hint: .8, .1

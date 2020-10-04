@@ -1,0 +1,35 @@
+<NewMessageScreen>:
+    GridLayout:
+    	padding: 30, 30, 30, 30
+    	spacing: 10
+    	cols: 1
+    	size_hint: 1, 1
+        canvas:
+            Color:
+                rgba: app.theme_cls.primary_light
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, .1
+            text: "New Message"
+            font_size: 24
+        TextInput:
+            id: subject_field
+            size_hint: .85, .1
+            hint_text: 'Subject'
+            multiline: False
+            valign: "middle"
+        TextInput:
+            id: message_field
+            size_hint: .85, .7
+            hint_text: 'Write message here...'
+        MDFlatButton:
+            size_hint: .85, .1
+            text: 'Send Message'
+            on_release:
+                app.post_message(subject_field.text, message_field.text)
+                app.screen_manager.current = 'tab_screen'
+                subject_field.text = ''
+                message_field.text = ''

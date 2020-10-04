@@ -36,6 +36,18 @@ class TabScreen(Screen):
     pass
 
 
+class ExampleTab(Screen):
+    pass
+
+
+class MessageBoardScreen(Screen):
+    pass
+
+
+class NewMessageScreen(Screen):
+    pass
+
+
 class ProfileScreen(Screen):
     pass
 

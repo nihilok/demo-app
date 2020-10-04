@@ -6,6 +6,7 @@
 #:include kv/profilescreen.kv
 #:include kv/photoscreen.kv
 #:include kv/gamescreen.kv
+#:include kv/newmessagescreen.kv
 
 <CustomNavBarButton@OneLineAvatarListItem>:
 
@@ -44,6 +45,9 @@ Screen:
                 PhotoScreen:
                     name: "photo_screen"
                     id: photo_screen
+                NewMessageScreen:
+                    name: "new_message_screen"
+                    id: new_message_screen
 
     MDNavigationDrawer:
         id: nav_drawer
@@ -104,12 +108,13 @@ Screen:
                 text: "Tab Layout"
                 on_release:
                     app.close_nav_drawer()
-                    app.screen_manager.current = 'tab_screen'
+                    app.screen_manager.current = 'tab_screen'     
                 IconLeftWidget:
                     icon: "view-carousel"
                     on_release:
                         app.close_nav_drawer()
-                        app.screen_manager.current = 'tab_screen'               
+                        app.screen_manager.current = 'tab_screen' 
+                        app.populate_messages()              
             CustomNavBarButton:
                 text: "Game"
                 on_release:

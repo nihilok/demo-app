@@ -8,12 +8,16 @@ from kivy.lang import Builder
 from kivy.clock import Clock
 from kivymd.theming import ThemeManager
 from kivymd.uix.button import MDIconButton
-from kivymd.uix.list import TwoLineIconListItem
+from kivymd.uix.list import TwoLineIconListItem, ThreeLineIconListItem
 
-from screens import HomeScreen, AboutScreen, ResourcesScreen, ContentNavigationDrawer, ThemeScreen, GameScreen, ProfileScreen, TabScreen, PhotoScreen
+from screens import HomeScreen, AboutScreen, ResourcesScreen, ContentNavigationDrawer, ThemeScreen, GameScreen, ProfileScreen, TabScreen, ExampleTab, PhotoScreen
 
 
-class CustomThreeLineIconListItem(TwoLineIconListItem):
+class CustomThreeLineIconListItem(ThreeLineIconListItem):
+    pass
+
+
+class CustomTwoLineIconListItem(TwoLineIconListItem):
     pass
 
 
@@ -33,7 +37,9 @@ class MainApp(MDApp):
         self.screen_manager = self.root.ids.screen_manager
         self.nav_drawer = self.root.ids.nav_drawer
         self.resource_list = self.root.ids.resources_screen.ids.resource_list
+        self.message_list = self.root.ids.tab_screen.ids.example_tab.ids.message_list
         self.populate_resources()
+        self.populate_messages()
         # print(self.root.ids)
 
     def populate_resources(self):
@@ -47,11 +53,26 @@ class MainApp(MDApp):
                      "emoticon-kiss-outline", "emoticon-neutral-outline", "emoticon-neutral", "emoticon-poop",
                      "emoticon-sad"]
         for i in range(1,13):
-            self.resource_list.add_widget(CustomThreeLineIconListItem(text=f"Section {i}",
+            self.resource_list.add_widget(CustomTwoLineIconListItem(text=f"Section {i}",
                                                                       id=f"{i}",
                                                                       secondary_text=f"{i} could refer to whatever you want",
                                                                       # on_release=self.open_url
                                                                       ))
+    
+    def populate_messages(self):
+        result = requests.get("https://m-ed-x.firebaseio.com/messages.json")
+        users = requests.get("https://m-ed-x.firebaseio.com/users.json")
+        message_data = json.loads(result.content.decode())
+        user_data = json.loads(users.content.decode())
+        message_list = reversed([ message for message in message_data ])
+        self.message_list = self.root.ids.tab_screen.ids.example_tab.ids.message_list
+        self.message_list.clear_widgets()
+        for message in message_list:
+            message_dict = message_data[message]
+            self.message_list.add_widget(CustomThreeLineIconListItem(text=message_dict['subject'],
+                                                               secondary_text=message_dict['message'],
+                                                               tertiary_text=message_dict['date'] + " " + user_data[message_dict['author']]['name']
+                                                               ))
 
     def app_description(self):
         return 'This is a description of the app, it can be as long as you like, within reason.\n\nIt ' \
